@@ -24,6 +24,46 @@
   /*===== z index =====*/
   --z-back: -10;
   --z-fixed: 100;
+
+  /* Default light mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark mode styles */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Toggle button styles */
+#theme-button {
+  cursor: pointer;
+}
+
+
+/* Apply colors */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.nav__logo, .nav__link, .section-title, .footer__title {
+  color: var(--text-color);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+  
 }
 @media screen and (min-width: 968px) {
   :root {

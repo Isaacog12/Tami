@@ -32,10 +32,12 @@ const scrollActive = () => {
               sectionId = current.getAttribute('id'),
               sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
 
-        if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
-            sectionsClass.classList.add('active-link');
-        } else {
-            sectionsClass.classList.remove('active-link');
+        if (sectionsClass) {
+            if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+                sectionsClass.classList.add('active-link');
+            } else {
+                sectionsClass.classList.remove('active-link');
+            }
         }
     });
 };
@@ -47,7 +49,6 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-    // reset: true
 });
 
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {}); 
@@ -55,28 +56,38 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', {delay: 40
 sr.reveal('.home__social-icon', { interval: 200 }); 
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
-/*===== DARK/LIGHT MODE TOGGLE =====*/
-const themeButton = document.getElementById('theme-button');
+/*===== DARK/LIGHT MODE TOGGLE (FIXED) =====*/
+const themeButton = document.getElementById("theme-button");
 const body = document.body;
-const darkTheme = 'dark-theme';
+const darkTheme = "dark-theme"; // Define class for dark mode
+
+// Load previous theme preference
+const savedTheme = localStorage.getItem("selected-theme");
+if (savedTheme === "enabled") {
+    body.classList.add(darkTheme);
+}
+
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme'; // Keep it consistent
 const iconTheme = 'toggle-icon-dark';
 
-// Check previous theme selection from localStorage
+// Check if the user has a preference saved in localStorage
 const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
 
 // Apply saved theme on page load
-if (selectedTheme) {
-    body.classList.add(selectedTheme);
-    themeButton.classList.add(selectedIcon);
+if (selectedTheme === darkTheme) {
+    document.body.classList.add(darkTheme);
+    themeButton.classList.add(iconTheme);
 }
 
 // Toggle Theme
 themeButton.addEventListener('click', () => {
-    body.classList.toggle(darkTheme);
+    document.body.classList.toggle(darkTheme);
     themeButton.classList.toggle(iconTheme);
 
-    // Save user's theme preference
-    localStorage.setItem('selected-theme', body.classList.contains(darkTheme) ? darkTheme : '');
+    // Save user's theme preference in localStorage
+    localStorage.setItem('selected-theme', document.body.classList.contains(darkTheme) ? darkTheme : '');
     localStorage.setItem('selected-icon', themeButton.classList.contains(iconTheme) ? iconTheme : '');
 });
+
