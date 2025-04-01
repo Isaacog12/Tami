@@ -56,19 +56,20 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', {delay: 40
 sr.reveal('.home__social-icon', { interval: 200 }); 
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
-/*===== DARK/LIGHT MODE TOGGLE (FIXED) =====*/
-const themeButton = document.getElementById("theme-button");
+/*===== DARK/LIGHT MODE TOGGLE =====*/
+// Theme variables are already declared below
+// const themeButton = document.getElementById("theme-button");
+// const darkTheme = "dark-theme";
 const body = document.body;
-const darkTheme = "dark-theme"; // Define class for dark mode
 
 // Load previous theme preference
 const savedTheme = localStorage.getItem("selected-theme");
 if (savedTheme === "enabled") {
     body.classList.add(darkTheme);
 }
-
-const themeButton = document.getElementById('theme-button');
-const darkTheme = 'dark-theme'; // Keep it consistent
+// These variables are already declared above
+// const themeButton = document.getElementById('theme-button');
+// const darkTheme = 'dark-theme';
 const iconTheme = 'toggle-icon-dark';
 
 // Check if the user has a preference saved in localStorage
