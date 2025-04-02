@@ -57,38 +57,47 @@ sr.reveal('.home__social-icon', { interval: 200 });
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
 /*===== DARK/LIGHT MODE TOGGLE =====*/
-// Theme variables are already declared below
-// const themeButton = document.getElementById("theme-button");
-// const darkTheme = "dark-theme";
 const body = document.body;
-
-// Load previous theme preference
-const savedTheme = localStorage.getItem("selected-theme");
-if (savedTheme === "enabled") {
-    body.classList.add(darkTheme);
-}
-// These variables are already declared above
-// const themeButton = document.getElementById('theme-button');
-// const darkTheme = 'dark-theme';
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
 const iconTheme = 'toggle-icon-dark';
 
-// Check if the user has a preference saved in localStorage
 const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
 
-// Apply saved theme on page load
 if (selectedTheme === darkTheme) {
     document.body.classList.add(darkTheme);
     themeButton.classList.add(iconTheme);
 }
 
-// Toggle Theme
 themeButton.addEventListener('click', () => {
     document.body.classList.toggle(darkTheme);
     themeButton.classList.toggle(iconTheme);
 
-    // Save user's theme preference in localStorage
     localStorage.setItem('selected-theme', document.body.classList.contains(darkTheme) ? darkTheme : '');
     localStorage.setItem('selected-icon', themeButton.classList.contains(iconTheme) ? iconTheme : '');
 });
 
+/*===== CONTACT FORM - SEND MESSAGE TO BACKEND =====*/
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const response = await fetch("http://localhost:5000/send", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+    });
+
+    if (response.ok) {
+        alert("Message sent successfully!");
+        document.getElementById("contact-form").reset();
+    } else {
+        alert("Failed to send message. Please try again later.");
+    }
+});
