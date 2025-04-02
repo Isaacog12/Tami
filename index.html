@@ -11,7 +11,7 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- Bootstrap CSS (Added) -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Tami's Portfolio</title>
@@ -20,28 +20,43 @@
 
     <!--===== HEADER SECTION =====-->
     <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="#" class="nav__logo">Tami</a> <!-- Logo Name -->
-            </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tami</a>
 
-            <!-- Navigation Menu -->
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    <ul>
-                        <li class="fas fa-moon" id="theme-button"></li>
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
                     </ul>
-                </ul>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
+                    <!-- Dark Mode Button (You can use this for toggle) -->
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-dark" id="theme-button">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -51,7 +66,7 @@
         <section class="home bd-grid" id="home">
             <div class="home__data">
                 <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Tami</span></h1>
-                <button><a href="#contact" class="button">Contact</a></button>
+                <button class="btn btn-primary"><a href="#contact" class="text-white">Contact</a></button>
             </div>
 
             <!-- Social Media Links -->
@@ -62,7 +77,7 @@
 
             <!-- Profile Image -->
             <div class="home__img">
-                <img src="assets/img/Profile.jpg" alt="Profile Image">
+                <img src="assets/img/Profile.jpg" alt="Profile Image" class="img-fluid">
             </div>
         </section>
 
@@ -72,17 +87,14 @@
 
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="About Image">
+                    <img src="assets/img/about.jpg" alt="About Image" class="img-fluid">
                 </div>
                 <div>
-                    <h2 class="about__subtitle"></h2>
+                    <h2 class="about__subtitle">I am passionate about writing</h2>
                     <p class="about__text">
-                       I am Passionate about writing
-                    </p>          
-                    <p>write</p>
-                    <p>more</p>
-                    <p>here</p>
-                </div>                                   
+                       I write stories, blogs, and much more. Writing is my passion, and I love sharing my ideas.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -94,18 +106,17 @@
                 <div>
                     <h2 class="skills__subtitle">Professional Skills</h2>
                     <p class="skills__text">
-                        My expertise spans multiple areas like
-                        <strong>
-                            <br> <-- Writing
-                            <br> <-- Singing
-                            <br> <-- Drawing
-                            <br> <-- and many more.
-                        </strong>
+                        My expertise spans multiple areas like:
+                        <ul>
+                            <li>Writing</li>
+                            <li>Singing</li>
+                            <li>Drawing</li>
+                            <li>And much more.</li>
+                        </ul>
                     </p>
-
-                <!-- Skills Image -->
+                </div>
                 <div>
-                    <img src="assets/img/about.jpg" alt="Skills Image" class="skills__img">
+                    <img src="assets/img/about.jpg" alt="Skills Image" class="skills__img img-fluid">
                 </div>
             </div>
         </section>
@@ -115,12 +126,13 @@
             <h2 class="section-title">Work</h2>
 
             <div class="work__container bd-grid">
-                <a href="https://substack.com/@theshadowsss/note/p-149195560" class="work__img"><img src="assets/img/work1.jpg" alt="Project 1"></a>
-                <a href="https://substack.com/@theshadowsss/note/p-150492481" class="work__img"><img src="assets/img/work2.jpg" alt="Project 2"></a>
-                <a href="https://substack.com/@theshadowsss/note/p-153333423" class="work__img"><img src="assets/img/work3.jpg" alt="Project 3"></a>
-                <a href="https://substack.com/@theshadowsss/note/p-153853119" class="work__img"><img src="assets/img/work4.jpg" alt="Project 4"></a>
-                <a href="https://substack.com/@theshadowsss/note/p-159671167" class="work__img"><img src="assets/img/work5.jpg" alt="Project 5"></a>
-                <a href="#" class="work__img"><img src="assets/img/work6.jpg" alt="Project 6"></a>
+                <a href="https://substack.com/@theshadowsss/note/p-149195560" class="work__img">
+                    <img src="assets/img/work1.jpg" alt="Project 1" class="img-fluid">
+                </a>
+                <a href="https://substack.com/@theshadowsss/note/p-150492481" class="work__img">
+                    <img src="assets/img/work2.jpg" alt="Project 2" class="img-fluid">
+                </a>
+                <!-- More work links here -->
             </div>
         </section>
 
@@ -130,21 +142,21 @@
 
             <div class="contact__container bd-grid">
                 <form action="mailto:ojekunleoluwatamilore@gmail.com" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input" required>
-                    <input type="email" placeholder="Email" class="contact__input" required>
-                    <textarea placeholder="Message" cols="30" rows="10" class="contact__input" required></textarea>
-                    <button type="submit" class="contact__button button">Send Message</button>
+                    <input type="text" placeholder="Name" class="contact__input form-control" required>
+                    <input type="email" placeholder="Email" class="contact__input form-control" required>
+                    <textarea placeholder="Message" cols="30" rows="10" class="contact__input form-control" required></textarea>
+                    <button type="submit" class="contact__button btn btn-primary">Send Message</button>
                 </form>
             </div>
         </section>
     </main>
 
     <!--===== FOOTER =====-->
-    <footer class="footer">
+    <footer class="footer text-center">
         <p class="footer__title">Tami</p>
         <div class="footer__social">
             <a href="https://wa.me/7045317406" class="footer__icon"><i class='bx bxl-whatsapp'></i></a>
-            <a href="#" class="footer__icon"><i class='bx bxl-substack'></i></a>
+            <a href="https://substack.com/@theshadowsss" class="footer__icon"><i class='bx bxl-substack'></i></a>
             <a href="#" class="footer__icon"><i class='bx bxl-twitter'></i></a>
         </div>
         <p class="footer__copy">&#169; 2025 Tami. All rights reserved.</p>
@@ -156,7 +168,7 @@
     <!-- Main JavaScript File -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Bootstrap JS (Added) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
