@@ -9,8 +9,10 @@
 
     <!-- Box Icons for Icons -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" 
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Bootstrap CSS (Added) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Tami's Portfolio</title>
 </head>
@@ -25,7 +27,6 @@
 
             <!-- Navigation Menu -->
             <div class="nav__menu" id="nav-menu">
-                
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
@@ -33,11 +34,8 @@
                     <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     <ul>
-                    <li class="fas fa-moon" id="theme-button"></li>
+                        <li class="fas fa-moon" id="theme-button"></li>
                     </ul>
-
-                   
-
                 </ul>
             </div>
 
@@ -58,7 +56,6 @@
 
             <!-- Social Media Links -->
             <div class="home__social">
-                <!-- <a href="#" class="home__social-icon"><i class='bx bxl-instagram'></i></a> -->
                 <a href="https://wa.me/7045317406" class="home__social-icon"><i class='bx bxl-whatsapp'></i></a>
                 <a href="https://substack.com/@theshadowsss" class="home__social-icon"><i class='bx bxl-substack'></i></a>
             </div>
@@ -98,15 +95,17 @@
                     <h2 class="skills__subtitle">Professional Skills</h2>
                     <p class="skills__text">
                         My expertise spans multiple areas like
-                      <strong> <br> <-- Writing
-                       <br> <-- Singing
-                       <br> <-- Drawing
-                       <br> <--  and many more.
-                    </p></strong>
+                        <strong>
+                            <br> <-- Writing
+                            <br> <-- Singing
+                            <br> <-- Drawing
+                            <br> <-- and many more.
+                        </strong>
+                    </p>
 
                 <!-- Skills Image -->
                 <div>
-                <img src="assets/img/about.jpg" alt="Skills Image" class="skills__img">
+                    <img src="assets/img/about.jpg" alt="Skills Image" class="skills__img">
                 </div>
             </div>
         </section>
@@ -137,7 +136,6 @@
                     <button type="submit" class="contact__button button">Send Message</button>
                 </form>
             </div>
-            </form>
         </section>
     </main>
 
@@ -147,7 +145,6 @@
         <div class="footer__social">
             <a href="https://wa.me/7045317406" class="footer__icon"><i class='bx bxl-whatsapp'></i></a>
             <a href="#" class="footer__icon"><i class='bx bxl-substack'></i></a>
-            
             <a href="#" class="footer__icon"><i class='bx bxl-twitter'></i></a>
         </div>
         <p class="footer__copy">&#169; 2025 Tami. All rights reserved.</p>
@@ -159,17 +156,8 @@
     <!-- Main JavaScript File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Bootstrap JS (Added) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
-
-
-<!--===== CONTACT SECTION =====-->
-        <!-- <section class="contact section" id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact__container bd-grid"></div>
-            <form action="mailto:isaacnerds@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Name" class="contact__input" required>
-                <input type="email" name="email" placeholder="Email" class="contact__input" required>
-                <textarea name="message" placeholder="Message" cols="30" rows="10" class="contact__input" required></textarea>
-                <button type="submit" class="contact__button button">Send Message</button> -->
-
