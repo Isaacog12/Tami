@@ -404,7 +404,11 @@ img {
 }
 
 /* ===== FOOTER =====*/
-
+.dark-theme .navbar-brand,
+.dark-theme .nav-link,
+.dark-theme .navbar-toggler-icon {
+  color: var(--text-color) !important;
+}
 .footer {
   background-color: #ffffff; /* White background for light mode */
   color: #121212;; /* Dark text for light mode */
