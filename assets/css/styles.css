@@ -26,7 +26,7 @@
   --z-fixed: 100;
 
   /* Default light mode */
-:root {
+{
   --bg-color: #ffffff;
   --text-color: #000000;
 }
@@ -150,11 +150,43 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #800080;
+  background-color: var(--bg-color) !important; /* Light mode background */
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  transition: all 0.3s ease;
 }
 
+.dark-theme .l-header {
+  background-color: #121212; /* Dark mode background */
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.15);
+}
+
+
+
 /*===== NAV =====*/
+
+.navbar {
+  background-color: var(--bg-color) !important; /* Force your theme color */
+}
+
+/* Dark mode overrides for the navigation bar */
+.dark-theme .nav__link {
+  color: var(--text-color);
+}
+
+.dark-theme .nav__logo {
+  color: var(--text-color);
+}
+
+.dark-theme .nav__toggle {
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 767px) {
+  .dark-theme .nav__menu {
+    background-color: var(--bg-color);
+  }
+}
+
 .nav {
   height: var(--header-height);
   display: flex;
@@ -372,28 +404,22 @@ img {
 }
 
 /* ===== FOOTER =====*/
+
 .footer {
-  background-color: #800080;
-  color: #fff;
+  background-color: #ffffff; /* White background for light mode */
+  color: #121212;; /* Dark text for light mode */
   text-align: center;
   font-weight: var(--font-semi);
-  padding: 2rem 0;
+  padding: 2rem;
+  transition: all 0.3s ease;
 }
-.footer__title {
-  font-size: 2rem;
-  margin-bottom: var(--mb-4);
+
+.dark-theme .footer {
+  background-color: #121212; /* Black background for dark mode */
+  color: #ffffff; /* Light text for dark mode */
 }
-.footer__social {
-  margin-bottom: var(--mb-4);
-}
-.footer__icon {
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 0 var(--mb-2);
-}
-.footer__copy {
-  font-size: var(--smaller-font-size);
-}
+
+
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {
